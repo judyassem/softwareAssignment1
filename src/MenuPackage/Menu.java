@@ -10,6 +10,10 @@ public class Menu {
         items.add(item);
     }
 
+    public List<MenuItem> getItems() {
+        return items;
+    }
+
     public void display() {
         System.out.println("-------------- MENU --------------");
         for (int i = 0; i < items.size(); i++) {

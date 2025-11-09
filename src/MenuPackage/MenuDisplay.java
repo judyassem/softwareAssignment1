@@ -1,4 +1,5 @@
 package MenuPackage;
+import OrderPackage.Order;
 
 import java.util.Scanner;
 
@@ -34,6 +35,8 @@ public class MenuDisplay {
 
         Menu menu = menuType.createMenu();
         menu.display();
+
         return menu;
     }
+
 }

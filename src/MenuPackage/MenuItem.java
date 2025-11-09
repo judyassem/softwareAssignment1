@@ -4,6 +4,7 @@ public abstract class MenuItem {
     protected String name;
     protected double price;
 
+    public MenuItem() {}
     public MenuItem(String name, double price) {
         this.name = name;
         this.price = price;
