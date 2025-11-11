@@ -9,7 +9,7 @@ public class Sauces extends AddOnDecorator{
 
     @Override
     public String getName() {
-        return base.getName() + " - extra Sauces";
+        return base.getName() + " + Extra Sauces";
     }
 
     @Override

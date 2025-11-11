@@ -14,11 +14,4 @@ public class Menu {
         return items;
     }
 
-    public void display() {
-        System.out.println("-------------- MENU --------------");
-        for (int i = 0; i < items.size(); i++) {
-            System.out.println(i+1 + ". " + items.get(i).getName() + " - " + items.get(i).getPrice() + " EGP");
-        }
-        System.out.println("-----------------------------------");
-    }
 }

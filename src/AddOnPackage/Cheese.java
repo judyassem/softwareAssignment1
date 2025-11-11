@@ -10,7 +10,7 @@ public class Cheese extends AddOnDecorator{
 
     @Override
     public String getName() {
-        return base.getName() + " - Cheese Sauce";
+        return base.getName() + " + Extra Cheese";
     }
 
     @Override

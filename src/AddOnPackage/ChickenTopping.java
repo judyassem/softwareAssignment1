@@ -9,7 +9,7 @@ public class ChickenTopping extends Toppings{
 
     @Override
     public String getName() {
-        return base.getName() + " - Extra Chicken Topping";
+        return base.getName() + " + Extra Chicken Topping";
     }
 
     @Override

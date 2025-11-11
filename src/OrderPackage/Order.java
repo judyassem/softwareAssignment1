@@ -12,7 +12,7 @@ public class Order {
 
     public void addItem(MenuItem menuItem, int quantity) {
         orders.add(menuItem);
-        totalCost += menuItem.getPrice();
+        totalCost += (menuItem.getPrice() * quantity);
     }
 
     public double getTotalCost() {

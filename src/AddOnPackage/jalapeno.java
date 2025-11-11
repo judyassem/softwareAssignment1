@@ -9,7 +9,7 @@ public class jalapeno extends Toppings{
 
     @Override
     public String getName() {
-        return base.getName() + " - extra jalapeno topping";
+        return base.getName() + " + Extra jalapeno topping";
     }
 
     @Override

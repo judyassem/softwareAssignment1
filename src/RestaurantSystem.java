@@ -1,11 +1,13 @@
-import MenuPackage.Menu;
 import MenuPackage.MenuDisplay;
+import MenuPackage.MenuItem;
 import OrderPackage.Order;
 import OrderPackage.OrderDisplay;
 
+import java.util.List;
+
 public class RestaurantSystem {
     public static void main(String[] args) {
-        Menu myMenu = MenuDisplay.showMenu();
+        List<MenuItem> myMenu = MenuDisplay.showMenu();
         OrderDisplay.getOrder(myMenu);
     }
 }
