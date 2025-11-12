@@ -10,8 +10,8 @@ public class VegetarianMenu implements MenuFactory{
         vegMenu.addItem(new Salad("coleslaw", 85));
         vegMenu.addItem(new Risotto("risotto", 120));
         vegMenu.addItem(new Risotto("Mushroom risotto", 150));
-        vegMenu.addItem(new Pasta("penna white sauce", 155));
-        vegMenu.addItem(new Pasta("cannelloni", 300));
+        vegMenu.addItem(new Pasta("penna white sauce pasta", 155));
+        vegMenu.addItem(new Pasta("cannelloni pasta", 300));
         return vegMenu;
     }
 }

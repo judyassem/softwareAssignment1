@@ -2,8 +2,8 @@ package AddOnPackage;
 
 import MenuPackage.MenuItem;
 
-public class jalapeno extends Toppings{
-    public jalapeno(MenuItem base) {
+public class Jalapeno extends Toppings{
+    public Jalapeno(MenuItem base) {
         super(base);
     }
 

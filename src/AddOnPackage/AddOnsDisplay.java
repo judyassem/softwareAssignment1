@@ -1,26 +1,23 @@
 package AddOnPackage;
 
-import MenuPackage.Menu;
-import MenuPackage.MenuFactory;
 import MenuPackage.MenuItem;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class AddOnsDisplay{
-    public void displayAddOns(MenuItem menuItem) {
-        int counter = 1;
-        List<AddOnDecorator> addOns = new ArrayList<>();
-        addOns.add(new Cheese(menuItem));
-        addOns.add(new ChickenTopping(menuItem));
-        addOns.add(new jalapeno(menuItem));
-        addOns.add(new Sauces(menuItem));
+    public static void displayAddOns(MenuItem menuItem) {
+        Map<Integer, AddOnDecorator> addOns = new LinkedHashMap<>();
+        addOns.put(1, new Cheese(menuItem));
+        addOns.put(2, new ChickenTopping(menuItem));
+        addOns.put(3, new Jalapeno(menuItem));
+        addOns.put(4, new Sauces(menuItem));
 
         System.out.println("-------------- Add Ons --------------");
-        for (AddOnDecorator addOn : addOns) {
+        for (Map.Entry<Integer, AddOnDecorator> entry : addOns.entrySet()) {
+            int addOnNumber = entry.getKey();
+            AddOnDecorator addOn = entry.getValue();
             double price = addOn.getPrice() - menuItem.getPrice();
-            System.out.println(counter + ". " + addOn.getName() + " - " + price + " EGP");
-            counter++;
+            System.out.println(addOnNumber + ". " + addOn.getName() + " - " + price + " EGP");
         }
         System.out.println("-------------------------------------");
 
