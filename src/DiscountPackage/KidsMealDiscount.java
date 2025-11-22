@@ -1,9 +1,11 @@
 package DiscountPackage;
+import MenuPackage.MenuItem;
 
-public class KidsMealDiscount {
-    public double applyDiscount(double amount) {
-        System.out.println("Applying Kids Meal Discount: " + (amount * 0.20) + " EGP");
-        return amount * 0.20;
+public class KidsMealDiscount implements DiscountHandling {
+    @Override
+    public void applyDiscount(MenuItem item) {
+        item.setPrice(item.getPrice()* 0.20);
+        System.out.println("Applying Kids Meal Discount: " + item.getPrice() + " EGP");
     }
 
 }

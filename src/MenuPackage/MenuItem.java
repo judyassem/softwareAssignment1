@@ -18,4 +18,8 @@ public abstract class MenuItem {
         return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
 }
