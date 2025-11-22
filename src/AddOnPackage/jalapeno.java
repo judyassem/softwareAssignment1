@@ -13,6 +13,11 @@ public class Jalapeno extends Toppings{
     }
 
     @Override
+    public String getDescription() {
+        return "Extra jalapeno topping";
+    }
+
+    @Override
     public double getPrice() {
         return base.getPrice() + 8.5;
     }

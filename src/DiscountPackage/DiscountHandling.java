@@ -3,5 +3,5 @@ import MenuPackage.Menu;
 import MenuPackage.MenuItem;
 
 public interface DiscountHandling {
-    public void applyDiscount(MenuItem item);
+    public double applyDiscount(MenuItem item, int quantity);
 }

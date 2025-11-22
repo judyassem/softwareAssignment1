@@ -2,16 +2,19 @@ package DiscountPackage;
 import MenuPackage.MenuItem;
 
 public class DiscountManager {
-    public void checkDiscounts(MenuItem Item) {
+    public double checkDiscounts(MenuItem Item, int quantity) {
+        double discount = 0.0;
+
         if(Item.getName().contains("pizza")) {
             PizzaDiscount pizzaDiscount = new PizzaDiscount();
-            pizzaDiscount.applyDiscount(Item);
+            discount = pizzaDiscount.applyDiscount(Item, quantity);
         } else if(Item.getName().contains("Kids")) {
             KidsMealDiscount kidsMealDiscount = new KidsMealDiscount();
-            kidsMealDiscount.applyDiscount(Item);
+            discount = kidsMealDiscount.applyDiscount(Item, quantity);
         } else if (Item.getName().contains("pasta")) {
             PastaDiscount pastaDiscount = new PastaDiscount();
-            pastaDiscount.applyDiscount(Item);
-        }     
+            discount = pastaDiscount.applyDiscount(Item, quantity);
+        }   
+        return discount;
     }
 }

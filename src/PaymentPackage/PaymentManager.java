@@ -7,11 +7,9 @@ public class PaymentManager {
         PaymentManager.paymentStrategy = paymentStrategy;
     }
 
-    public static void processPayment(double amount) {
-        if (paymentStrategy == null) {
-            System.out.println("Payment method not selected.");
-        } else {
-            paymentStrategy.pay(amount);
-        }
+    public static PaymentStrategy getPaymentStrategy() {
+        return paymentStrategy;
     }
+
+
 }

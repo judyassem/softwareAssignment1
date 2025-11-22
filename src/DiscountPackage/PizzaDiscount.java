@@ -3,9 +3,10 @@ import MenuPackage.MenuItem;
 
 public class PizzaDiscount implements DiscountHandling {
     @Override
-    public void applyDiscount(MenuItem item) {
-        item.setPrice(item.getPrice() * 0.15);
-        System.out.println("Applying Pizza Discount: " + item.getPrice() + " EGP");
+    public double applyDiscount(MenuItem item, int quantity) {
+        double discount = item.getBasePrice() * 0.15 * quantity;
+        System.out.println("\nApplying Pizza Discount: -" + discount + " EGP");
+        return discount;
     }
 
 }

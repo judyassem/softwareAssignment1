@@ -6,36 +6,49 @@ public class RestaurantSystem {
 
         ResturantFacade facade = new ResturantFacade();
         System.out.println("Welcome to the Restaurant System!");
-
         List<MenuItem> menuItems = facade.showMenu();
-        System.out.println("Enter your choice of menu item(0 to finish):");
-
         Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-        MenuItem selectedItem = menuItems.get(choice - 1);
+        while (true) {
+            System.out.println("\nEnter your choice of menu item(0 to finish):");
+            int choice = sc.nextInt();
 
-        System.out.println("Add-ons for " + selectedItem.getName() + "? [Y/N]");
-        char ans = sc.next().charAt(0);
-
-        if (Character.toUpperCase(ans) == 'Y') {
-            facade.addOnsDisplay(selectedItem);
-            System.out.println("Select add-ons (comma separated): ");
-            sc.nextLine(); 
-            String[] selected = sc.nextLine().split(",");
-            List<Integer> addOnChoices = new java.util.ArrayList<>();
-            for (String s : selected) {
-                int addOnChoice = Integer.parseInt(s.trim());
-                addOnChoices.add(addOnChoice);
+            if (choice == 0) {
+                break;
             }
-            selectedItem = facade.addAddOns(selectedItem, addOnChoices);
+
+            if (choice < 1 || choice > menuItems.size()) {
+                System.out.println("Invalid choice, please try again.");
+                continue;
+            }
+
+            MenuItem selectedItem = menuItems.get(choice - 1);
+
+            System.out.println("Add-ons for " + selectedItem.getName() + "? [Yes/No]");
+            String ans = sc.next();
+
+            if (ans.equalsIgnoreCase("Yes")) {
+                facade.addOnsDisplay(selectedItem);
+                System.out.println("Select add-ons (comma separated): ");
+                sc.nextLine(); 
+                String[] selected = sc.nextLine().split(",");
+                List<Integer> addOnChoices = new java.util.ArrayList<>();
+                for (String s : selected) {
+                    int addOnChoice = Integer.parseInt(s.trim());
+                    addOnChoices.add(addOnChoice);
+                }
+                selectedItem = facade.addAddOns(selectedItem, addOnChoices);
+            } else {
+                System.out.println("No add-ons selected.\n");
+            }
+
+            System.out.print("Enter quantity for " + selectedItem.getName() + ": ");
+            int quantity = sc.nextInt();
+            facade.addItem(selectedItem, quantity);
+            
         }
-
-        System.out.print("Enter quantity for " + selectedItem.getName() + ": ");
-        int quantity = sc.nextInt();
-
         facade.orderTypeDisplay();
         facade.paymentDisplay();
-        
-        facade.placeOrder(quantity, selectedItem);
+        facade.placeOrder();
+        facade.GenerateReciept();
     }
 }

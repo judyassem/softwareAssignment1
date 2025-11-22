@@ -13,6 +13,11 @@ public class Sauces extends AddOnDecorator{
     }
 
     @Override
+    public String getDescription() {
+        return "Extra Sauces";
+    }
+
+    @Override
     public double getPrice() {
         return base.getPrice() + 10.0;
     }

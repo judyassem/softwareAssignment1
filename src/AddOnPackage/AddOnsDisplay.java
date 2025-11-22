@@ -17,7 +17,7 @@ public class AddOnsDisplay{
             int addOnNumber = entry.getKey();
             AddOnDecorator addOn = entry.getValue();
             double price = addOn.getPrice() - menuItem.getPrice();
-            System.out.println(addOnNumber + ". " + addOn.getName() + " - " + price + " EGP");
+            System.out.println(addOnNumber + ". " + addOn.getDescription() + " - " + price + " EGP");
         }
         System.out.println("-------------------------------------");
 

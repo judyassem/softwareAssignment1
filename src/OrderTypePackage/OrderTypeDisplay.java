@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class OrderTypeDisplay {
     public void displayOrderType() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Order Types:");
-        System.out.println("1. Dine In");
+        System.out.println("\nOrder Types:");
+        System.out.println("\n1. Dine In");
         System.out.println("2. Take Away");
         System.out.println("3. Delivery");
-        System.out.print("Please select your order type: ");
+        System.out.print("\nPlease select your order type: ");
 
         int choice = sc.nextInt();
         

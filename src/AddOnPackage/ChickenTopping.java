@@ -13,6 +13,11 @@ public class ChickenTopping extends Toppings{
     }
 
     @Override
+    public String getDescription() {
+        return "Extra Chicken Topping";
+    }
+
+    @Override
     public double getPrice() {
         return base.getPrice() + 30;
     }

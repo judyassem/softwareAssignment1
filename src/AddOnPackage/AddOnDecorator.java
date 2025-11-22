@@ -12,4 +12,8 @@ public abstract class AddOnDecorator extends MenuItem{
 
     public abstract String getName();
     public abstract double getPrice();
+    public double getBasePrice() {
+        return base.getBasePrice();
+    }
+    public abstract String getDescription();
 }

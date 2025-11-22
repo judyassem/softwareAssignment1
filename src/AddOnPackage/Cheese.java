@@ -7,6 +7,10 @@ public class Cheese extends AddOnDecorator{
     public Cheese(MenuItem base) {
         super(base);
     }
+    @Override
+    public String getDescription() {
+        return "Extra Cheese";
+    }
 
     @Override
     public String getName() {

@@ -1,3 +1,4 @@
+import MenuPackage.Menu;
 import MenuPackage.MenuDisplay;
 import MenuPackage.MenuItem;
 import OrderPackage.OrderController;
@@ -6,16 +7,13 @@ import PaymentPackage.PaymentManager;
 import ObserverPackage.*;
 import AddOnPackage.*;
 import OrderTypePackage.*;
-
 import java.util.List;
-
+import java.util.Map;
 import DiscountPackage.*;
 
 
 public class ResturantFacade {
     private OrderController orderController;
-    private OrderTypeManager orderTypeManager;
-    private PaymentManager paymentManager;
     private PaymentDisplay paymentDisplay;
     private MenuDisplay menuDisplay;
     private AddOnMenu addOnMenu;
@@ -23,20 +21,21 @@ public class ResturantFacade {
     private DiscountManager discountManager;
     private AddOnsDisplay addOnsDisplay;
     private OrderTypeDisplay orderTypeDisplay;
-    private OrderTypeManager orderTypeMgr;
+    private Kitchen kitchen;
+    private Waiter waiter;
+
 
     public ResturantFacade() {
         orderController = new OrderController();
-        orderTypeManager = new OrderTypeManager();
-        paymentManager = new PaymentManager();
         menuDisplay = new MenuDisplay();
         orderObserver = new Order();
         discountManager = new DiscountManager();
         addOnMenu = new AddOnMenu();
         addOnsDisplay = new AddOnsDisplay();
         orderTypeDisplay = new OrderTypeDisplay();
-        orderTypeMgr = new OrderTypeManager();
         paymentDisplay = new PaymentDisplay();
+        kitchen = new Kitchen();
+        waiter = new Waiter();
     }
 
     public List<MenuPackage.MenuItem> showMenu() {
@@ -62,10 +61,24 @@ public class ResturantFacade {
         return item;
     }
 
-    void placeOrder(int quantity, MenuItem item) {
+    public void addItem(MenuItem item, int quantity) {
         orderController.addItem(item, quantity);
-        discountManager.checkDiscounts(item);
-        paymentManager.processPayment(orderController.getTotalCost());
+    }
+
+    public void GenerateReciept() {
+        GenerateReciept receipt = new GenerateReciept();
+        receipt.generate(orderController, null);
+    }
+
+    void placeOrder() {
+        for(Map.Entry<MenuItem, Integer> entry : orderController.getItems().entrySet()) {
+            MenuItem currentItem = entry.getKey();
+            int currentQuantity = entry.getValue();
+            double discount = discountManager.checkDiscounts(currentItem,currentQuantity);
+            orderController.addDiscount(discount);
+        }
+        orderObserver.registerObserver(kitchen);
+        orderObserver.registerObserver(waiter);
         orderObserver.myNotify();
     }
 }

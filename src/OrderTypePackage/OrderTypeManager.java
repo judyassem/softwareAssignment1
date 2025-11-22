@@ -11,7 +11,12 @@ public class OrderTypeManager {
         return orderTypeStrategy.applyTaxes(amount);
     }
 
-    public String getOrderType() {
-        return orderTypeStrategy.getOrderType();
+    public static OrderTypeStrategy getOrderTypeStrategy() {
+        return orderTypeStrategy;
+    }
+
+    public double getTaxAmount(double amount) {
+        double afterTax = orderTypeStrategy.applyTaxes(amount);
+        return afterTax - amount;
     }
 }

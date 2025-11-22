@@ -22,7 +22,7 @@ public class Order implements Subject {
     }
 
     public void myNotify() {
-        System.out.println("Order placed successfully!");
+        System.out.println("\nOrder placed successfully!");
         notifyObservers();
     }
 
