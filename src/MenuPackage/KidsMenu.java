@@ -1,5 +1,5 @@
 package MenuPackage;
-
+// Factory Class for Kids Menu
 public class KidsMenu implements MenuFactory{
 
     @Override

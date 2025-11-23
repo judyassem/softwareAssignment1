@@ -1,7 +1,7 @@
 package PaymentPackage;
 
 import java.util.Scanner;
-
+// PaymentDisplay Class to handle payment method selection
 public class PaymentDisplay {
     
     public void showPaymentMethod() {

@@ -1,5 +1,5 @@
 package MenuPackage;
-
+// Factory Class for Vegetarian Menu
 public class VegetarianMenu implements MenuFactory{
 
     @Override

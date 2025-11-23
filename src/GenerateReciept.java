@@ -4,7 +4,7 @@ import OrderTypePackage.*;
 import PaymentPackage.*;
 import java.util.List;
 
-
+// GenerateReciept Class to print the order receipt
 public class GenerateReciept {
     OrderTypeManager orderTypeManager = new OrderTypeManager();
     PaymentManager paymentManager = new PaymentManager();

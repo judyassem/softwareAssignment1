@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import DiscountPackage.*;
 
-
+// ResturantFacade Class to simplify interactions with the restaurant system
 public class ResturantFacade {
     private OrderController orderController;
     private PaymentDisplay paymentDisplay;

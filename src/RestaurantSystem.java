@@ -1,6 +1,8 @@
 import MenuPackage.MenuItem;
 import java.util.List;
 import java.util.Scanner;
+
+// RestaurantSystem Class to run the restaurant ordering system
 public class RestaurantSystem {
     public static void main(String[] args) {
 

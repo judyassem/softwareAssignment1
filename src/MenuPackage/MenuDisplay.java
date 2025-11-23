@@ -1,6 +1,6 @@
 package MenuPackage;
 import java.util.*;
-
+// Display Menu Items
 public class MenuDisplay {
     public static List<MenuItem> showMenu() {
         int counter = 1;

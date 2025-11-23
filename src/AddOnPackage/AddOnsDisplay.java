@@ -4,6 +4,8 @@ import MenuPackage.MenuItem;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+// Display Add-Ons for a Menu Item
+// Uses Decorator Pattern to show available add-ons
 public class AddOnsDisplay{
     public static void displayAddOns(MenuItem menuItem) {
         Map<Integer, AddOnDecorator> addOns = new LinkedHashMap<>();

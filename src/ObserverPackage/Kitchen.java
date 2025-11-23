@@ -1,5 +1,5 @@
 package ObserverPackage;
-
+// Kitchen Observer Class implementing Observer Interface
 public class Kitchen implements Observer {
 
     @Override

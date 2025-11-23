@@ -2,6 +2,7 @@ package AddOnPackage;
 import MenuPackage.Menu;
 import MenuPackage.MenuItem;
 
+// Create Add-On Menu using Decorator Pattern
 public class AddOnMenu {
     public static MenuItem createAddOnMenu (int choice, MenuItem item) {
         switch (choice) {

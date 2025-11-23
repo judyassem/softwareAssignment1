@@ -6,6 +6,9 @@ import MenuPackage.MenuItem;
 import OrderTypePackage.OrderTypeManager;
 import OrderTypePackage.OrderTypeStrategy;
 
+
+// OrderController Class to manage orders calculations
+
 public class OrderController {
 
     private Map<MenuItem, Integer> items = new LinkedHashMap<>();

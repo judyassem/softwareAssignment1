@@ -1,7 +1,7 @@
 package OrderTypePackage;
 
 import java.util.Scanner;
-
+// OrderTypeDisplay Class to handle order type selection
 public class OrderTypeDisplay {
     public void displayOrderType() {
         Scanner sc = new Scanner(System.in);

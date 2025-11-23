@@ -1,5 +1,5 @@
 package ObserverPackage;
-
+// Waiter Observer Class implementing Observer Interface
 public class Waiter implements Observer {
 
     @Override

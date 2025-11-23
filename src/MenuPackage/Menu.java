@@ -3,6 +3,7 @@ package MenuPackage;
 import java.util.ArrayList;
 import java.util.List;
 
+// Menu Class to hold Menu Items
 public class Menu {
     private List<MenuItem> items = new ArrayList<>();
 

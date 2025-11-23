@@ -1,6 +1,7 @@
 package ObserverPackage;
 import java.util.ArrayList;
 import java.util.List;
+// Order Subject Class implementing Subject Interface
 public class Order implements Subject {
     private List<Observer> observers = new ArrayList<>();
 

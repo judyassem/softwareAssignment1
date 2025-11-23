@@ -1,5 +1,5 @@
 package MenuPackage;
-
+// Abstract Class for Menu Items
 public abstract class MenuItem {
     protected String name;
     protected double price;

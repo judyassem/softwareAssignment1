@@ -1,5 +1,5 @@
 package OrderTypePackage;
-
+// OrderTypeManager Class to manage order type strategies
 public class OrderTypeManager {
     private static OrderTypeStrategy orderTypeStrategy;
 

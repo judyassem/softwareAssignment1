@@ -1,5 +1,5 @@
 package PaymentPackage;
-
+// PaymentManager Class to manage payment strategies
 public class PaymentManager {
     private static PaymentStrategy paymentStrategy;
 

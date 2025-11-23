@@ -1,5 +1,5 @@
 package MenuPackage;
-
+// Factory Class for Appetizers Menu
 public class Appetizers implements MenuFactory{
     @Override
     public Menu createMenu() {

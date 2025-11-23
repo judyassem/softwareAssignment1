@@ -1,5 +1,6 @@
 package MenuPackage;
 
+// Factory Class for Non-Vegetarian Menu
 public class NonVegetarianMenu implements MenuFactory{
     @Override
     public Menu createMenu() {

@@ -2,6 +2,7 @@ package AddOnPackage;
 
 import MenuPackage.MenuItem;
 
+// Decorator Abstract Class for Add-Ons
 public abstract class AddOnDecorator extends MenuItem{
 
     protected MenuItem base;
